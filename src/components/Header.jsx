@@ -1,102 +1,568 @@
 import React, { useState } from "react";
-import { Mail, Phone, ChevronDown } from "lucide-react";
+import { ChevronDown, Menu, X } from "lucide-react";
 
-const navItems = [
-  { label: "Home", href: "#", dropdown: null },
-  { label: "About Us", href: "#", dropdown: ["Our Vision", "Our Mission", "Governing Body", "Infrastructure"] },
-  { label: "Department", href: "#", dropdown: ["MBA", "MCA", "Computer Science", "Management Studies"] },
-  { label: "Student Corner", href: "#", dropdown: ["Result", "Time Table", "Circulars", "Grievance"] },
-  { label: "Academics", href: "#", dropdown: ["Syllabus", "Academic Calendar", "Exam Cell"] },
-  { label: "NAAC", href: "#", dropdown: ["SSR", "IIQA", "AQAR"] },
-  { label: "Placement", href: "#", dropdown: ["Placement Cell", "Recruiters", "Placement Record"] },
-  { label: "Contact", href: "#", dropdown: null },
-];
-
-export default function Header() {
+const Header = () => {
+  const [mobileMenu, setMobileMenu] = useState(false);
   const [openDropdown, setOpenDropdown] = useState(null);
 
+  const menuItems = [
+    {
+      name: "Home",
+      link: "/",
+    },
+
+    {
+      name: "About Us",
+      dropdown: [
+        "Mission & Vision",
+        "Patrons",
+        "President Message",
+        "CEO Message",
+        "Board Of Trustee",
+        "Governing Body Member",
+        "Director Message",
+        "College Development Committee",
+        "Faculty Profile",
+        "Loni Campus",
+        "Perspective Plan",
+        "Organisation Chart",
+      ],
+    },
+
+    {
+      name: "Department",
+      dropdown: [
+        "MBA",
+        "MCA",
+        "Faculty",
+      ],
+    },
+
+    {
+      name: "Student Corner",
+      dropdown: [
+        "Student Activities",
+        "Notice Board",
+        "Events",
+      ],
+    },
+
+    {
+      name: "Academics",
+      dropdown: [
+        "Programs",
+        "Syllabus",
+        "Academic Calendar",
+      ],
+    },
+
+    {
+      name: "NAAC",
+      dropdown: [
+        "NAAC Documents",
+        "IQAC",
+        "Accreditation",
+      ],
+    },
+
+    {
+      name: "Placement",
+      dropdown: [
+        "Placement Cell",
+        "Recruiters",
+        "Placement Records",
+      ],
+    },
+
+    {
+      name: "Contact",
+      link: "/contact",
+    },
+  ];
+
+  const toggleDropdown = (name) => {
+    setOpenDropdown(
+      openDropdown === name ? null : name
+    );
+  };
+
   return (
-    <header className="w-full font-sans ">
-      <div className="bg-[#0e2a52] text-white text-xs sm:text-sm">
-        <div className="max-w-7xl mx-auto flex flex-col sm:flex-row items-start sm:items-center justify-between gap-2 px-4 py-2">
-          <div className="flex flex-col xs:flex-row sm:items-center gap-1 sm:gap-5 shrink-0">
-            <a href="mailto:directoribma@pirens.in" className="flex items-center gap-1.5 hover:text-[#f5a623] transition-colors">
-              <Mail size={14} className="shrink-0" />
-              <span>Email:&nbsp;<span className="font-medium">directoribma@pirens.in</span></span>
-            </a>
-            <a href="tel:02422273694" className="flex items-center gap-1.5 hover:text-[#f5a623] transition-colors">
-              <Phone size={14} className="shrink-0" />
-              <span>Phone:&nbsp;<span className="font-medium">02422-273694</span></span>
-            </a>
+    <header className="w-full bg-white border-t-[3px] border-[#0b2d4d]">
+
+      {/* =====================================================
+          DESKTOP HEADER
+      ====================================================== */}
+
+      <div className="hidden lg:block">
+
+        <div className="w-full px-6 xl:px-10">
+
+          <div className="h-[108px] flex items-center">
+
+            {/* ================= LOGO ================= */}
+
+            <div className="flex-shrink-0 w-[250px] xl:w-[275px]">
+
+              <a
+                href="/"
+                className="inline-block"
+              >
+                <img
+                  src="/logo.png"
+                  alt="PIRENS IBMA"
+                  className="
+                    block
+                    w-[225px]
+                    xl:w-[245px]
+                    h-auto
+                    object-contain
+                  "
+                />
+              </a>
+
+            </div>
+
+
+            {/* ================= NAVIGATION ================= */}
+
+            <nav
+              className="
+                flex-1
+                flex
+                items-center
+                justify-end
+                gap-x-4
+                xl:gap-x-5
+                2xl:gap-x-6
+                min-w-0
+              "
+            >
+
+              {menuItems.map((item) => (
+
+                <div
+                  key={item.name}
+                  className="
+                    relative
+                    group
+                    flex-shrink-0
+                  "
+                >
+
+                  {/* ================= DROPDOWN MENU ================= */}
+
+                  {item.dropdown ? (
+
+                    <>
+
+                      <button
+                        type="button"
+                        onClick={() =>
+                          toggleDropdown(item.name)
+                        }
+                        className={`
+                          flex
+                          items-center
+                          gap-[4px]
+                          whitespace-nowrap
+                          text-[15px]
+                          xl:text-[16px]
+                          2xl:text-[17px]
+                          font-semibold
+                          tracking-[-0.1px]
+                          transition-colors
+                          duration-200
+                          ${
+                            item.name === "Department"
+                              ? "text-[#079447]"
+                              : "text-[#071f3d]"
+                          }
+                          hover:text-[#079447]
+                        `}
+                      >
+
+                        {item.name}
+
+                        <ChevronDown
+                          size={15}
+                          strokeWidth={1.6}
+                          className="
+                            transition-transform
+                            duration-200
+                            group-hover:rotate-180
+                          "
+                        />
+
+                      </button>
+
+
+                      {/* ================= DROPDOWN ================= */}
+
+                      <div
+                        className="
+                          absolute
+                          top-[28px]
+                          left-1/2
+                          -translate-x-1/2
+
+                          w-[210px]
+
+                          bg-white
+
+                          border
+                          border-gray-100
+
+                          rounded-md
+
+                          shadow-lg
+
+                          overflow-hidden
+
+                          opacity-0
+                          invisible
+
+                          translate-y-2
+
+                          group-hover:opacity-100
+                          group-hover:visible
+                          group-hover:translate-y-0
+
+                          transition-all
+                          duration-200
+
+                          z-[100]
+                        "
+                      >
+
+                        {item.dropdown.map(
+                          (dropdownItem) => (
+
+                            <a
+                              key={dropdownItem}
+                              href="#"
+                              className="
+                                block
+                                px-5
+                                py-3
+
+                                text-[14px]
+
+                                font-medium
+
+                                text-[#132c47]
+
+                                hover:bg-[#f3f8f5]
+
+                                hover:text-[#079447]
+
+                                transition-colors
+                              "
+                            >
+                              {dropdownItem}
+                            </a>
+
+                          )
+                        )}
+
+                      </div>
+
+                    </>
+
+                  ) : (
+
+                    /* ================= NORMAL LINK ================= */
+
+                    <a
+                      href={item.link}
+                      className="
+                        block
+                        whitespace-nowrap
+
+                        text-[15px]
+                        xl:text-[16px]
+                        2xl:text-[17px]
+
+                        font-semibold
+
+                        text-[#079447]
+
+                        hover:text-[#057a39]
+
+                        transition-colors
+                        duration-200
+                      "
+                    >
+                      {item.name}
+                    </a>
+
+                  )}
+
+                </div>
+
+              ))}
+
+            </nav>
+
           </div>
-          <div className="flex-1 min-w-0 overflow-hidden px-2 hidden md:block">
-            <p className="truncate text-center">
-              <span className="text-slate-200">Notifications: </span>
-              <span className="text-[#ff5a5f] font-semibold">come to PIRENS Institute of Business Management and Administration (IBMA)</span>
-            </p>
-          </div>
-          <div className="flex flex-col xs:flex-row sm:items-center gap-1 sm:gap-5 shrink-0 text-slate-100">
-            <span>DTE Code MBA:<span className="font-semibold">511710110</span></span>
-            <span>DTE Code MCA:<span className="font-semibold">511724110</span></span>
-          </div>
+
         </div>
-        <div className="md:hidden px-4 pb-2 -mt-1">
-          <p className="text-[#ff5a5f] font-semibold text-xs truncate">come to PIRENS Institute of Business Management and Administration (IBMA)</p>
-        </div>
+
+
+        {/* ================= ACTIVE LINE ================= */}
+
+
+
       </div>
 
-      <div className="bg-white shadow-sm">
-        <div className="max-w-7xl mx-auto flex items-center gap-4 px-4 py-3">
-          <a href="#" className="flex items-center gap-3 shrink-0">
-            <svg width="48" height="48" viewBox="0 0 52 52" aria-hidden="true">
-              <circle cx="20" cy="18" r="14" fill="#f5a623" fillOpacity="0.9" />
-              <circle cx="32" cy="18" r="14" fill="#7b8794" fillOpacity="0.75" />
-              <circle cx="26" cy="30" r="14" fill="#0e2a52" fillOpacity="0.85" />
-            </svg>
-            <div className="leading-tight">
-              <p className="text-[#0e2a52] font-semibold tracking-wide text-sm lg:text-base">PIRENS</p>
-              <p className="text-[#0e2a52] font-extrabold text-xl lg:text-2xl -mt-1 tracking-tight">IBMA</p>
-              <p className="text-[10px] text-slate-500 mt-0.5 max-w-[170px] leading-snug hidden lg:block">Institute of Business Management and Administration</p>
-            </div>
+
+      {/* =====================================================
+          MOBILE HEADER
+      ====================================================== */}
+
+      <div className="lg:hidden">
+
+        {/* ================= MOBILE TOP ================= */}
+
+        <div
+          className="
+            min-h-[82px]
+            px-5
+            py-3
+            flex
+            items-center
+            justify-between
+          "
+        >
+
+          {/* LOGO */}
+
+          <a
+            href="/"
+            className="block"
+          >
+
+            <img
+              src="/logo.png"
+              alt="PIRENS IBMA"
+              className="
+                w-[195px]
+                sm:w-[225px]
+                h-auto
+                object-contain
+              "
+            />
+
           </a>
 
-          <nav
-            className="flex items-center gap-4 lg:gap-6 flex-nowrap overflow-x-auto flex-1 min-w-0"
-            style={{ scrollbarWidth: "thin" }}
-          >
-            {navItems.map((item) => (
-              <div
-                key={item.label}
-                className="relative shrink-0"
-                onMouseEnter={() => item.dropdown && setOpenDropdown(item.label)}
-                onMouseLeave={() => item.dropdown && setOpenDropdown(null)}
-              >
-                <button
-                  onClick={() => item.dropdown && setOpenDropdown(openDropdown === item.label ? null : item.label)}
-                  className={`flex items-center gap-1 text-[13px] lg:text-[15px] font-medium py-2 whitespace-nowrap transition-colors ${
-                    item.label === "Home" ? "text-emerald-600" : "text-[#0e2a52] hover:text-[#f5a623]"
-                  }`}
-                >
-                  {item.label}
-                  {item.dropdown && (
-                    <ChevronDown size={14} className={`transition-transform ${openDropdown === item.label ? "rotate-180" : ""}`} />
-                  )}
-                </button>
 
-                {item.dropdown && openDropdown === item.label && (
-                  <div className="absolute left-0 top-full min-w-[190px] bg-white border border-slate-100 rounded-md shadow-lg py-2 z-50">
-                    {item.dropdown.map((sub) => (
-                      <a key={sub} href="#" className="block px-4 py-2 text-sm text-[#0e2a52] hover:bg-slate-50 hover:text-[#f5a623] transition-colors whitespace-nowrap">
-                        {sub}
-                      </a>
-                    ))}
-                  </div>
-                )}
-              </div>
-            ))}
-          </nav>
+          {/* ================= MENU BUTTON ================= */}
+
+          <button
+            type="button"
+            aria-label="Toggle Menu"
+            onClick={() =>
+              setMobileMenu(!mobileMenu)
+            }
+            className="
+              w-10
+              h-10
+
+              flex
+              items-center
+              justify-center
+
+              rounded-md
+
+              border
+              border-gray-200
+
+              text-[#0b2d4d]
+
+              hover:bg-gray-50
+
+              transition
+            "
+          >
+
+            {mobileMenu ? (
+              <X size={25} />
+            ) : (
+              <Menu size={25} />
+            )}
+
+          </button>
+
         </div>
+
+
+        {/* ================= MOBILE NAVIGATION ================= */}
+
+        {mobileMenu && (
+
+          <div
+            className="
+              border-t
+              border-gray-200
+
+              bg-white
+
+              shadow-lg
+
+              z-50
+            "
+          >
+
+            <nav className="px-5 py-2">
+
+              {menuItems.map((item) => (
+
+                <div
+                  key={item.name}
+                  className="
+                    border-b
+                    border-gray-100
+
+                    last:border-none
+                  "
+                >
+
+                  {/* ================= DROPDOWN ================= */}
+
+                  {item.dropdown ? (
+
+                    <>
+
+                      <button
+                        type="button"
+                        onClick={() =>
+                          toggleDropdown(item.name)
+                        }
+                        className="
+                          w-full
+
+                          flex
+                          items-center
+                          justify-between
+
+                          py-4
+
+                          text-[16px]
+
+                          font-semibold
+
+                          text-[#0b2d4d]
+
+                          hover:text-[#079447]
+
+                          transition
+                        "
+                      >
+
+                        {item.name}
+
+                        <ChevronDown
+                          size={18}
+                          className={`
+                            transition-transform
+                            duration-200
+
+                            ${
+                              openDropdown ===
+                              item.name
+                                ? "rotate-180"
+                                : ""
+                            }
+                          `}
+                        />
+
+                      </button>
+
+
+                      {/* MOBILE SUB MENU */}
+
+                      {openDropdown ===
+                        item.name && (
+
+                        <div
+                          className="
+                            pb-3
+                            pl-4
+                          "
+                        >
+
+                          {item.dropdown.map(
+                            (dropdownItem) => (
+
+                              <a
+                                key={dropdownItem}
+                                href="#"
+                                className="
+                                  block
+
+                                  py-2
+
+                                  text-[14px]
+
+                                  text-gray-600
+
+                                  hover:text-[#079447]
+
+                                  transition
+                                "
+                              >
+                                {dropdownItem}
+                              </a>
+
+                            )
+                          )}
+
+                        </div>
+
+                      )}
+
+                    </>
+
+                  ) : (
+
+                    /* ================= NORMAL MOBILE LINK ================= */
+
+                    <a
+                      href={item.link}
+                      className="
+                        block
+
+                        py-4
+
+                        text-[16px]
+
+                        font-semibold
+
+                        text-[#079447]
+
+                        hover:text-[#057a39]
+
+                        transition
+                      "
+                    >
+                      {item.name}
+                    </a>
+
+                  )}
+
+                </div>
+
+              ))}
+
+            </nav>
+
+          </div>
+
+        )}
+
       </div>
+
     </header>
   );
-}
+};
+
+export default Header;
