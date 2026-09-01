@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { ChevronDown, Menu, X } from "lucide-react";
+import { Link } from "react-router-dom";
 
 const Header = () => {
   const [mobileMenu, setMobileMenu] = useState(false);
@@ -14,63 +15,228 @@ const Header = () => {
     {
       name: "About Us",
       dropdown: [
-        "Mission & Vision",
-        "Patrons",
-        "President Message",
-        "CEO Message",
-        "Board Of Trustee",
-        "Governing Body Member",
-        "Director Message",
-        "College Development Committee",
-        "Faculty Profile",
-        "Loni Campus",
-        "Perspective Plan",
-        "Organisation Chart",
+        {
+          name: "Mission & Vision",
+          link: "/about/mission-vision",
+        },
+        {
+          name: "Patrons",
+          link: "/about/patrons",
+        },
+        {
+          name: "President Message",
+          link: "/about/president-message",
+        },
+        {
+          name: "CEO Message",
+          link: "/about/ceo-message",
+        },
+        {
+          name: "Board Of Trustee",
+          link: "/about/board-of-trustee",
+        },
+        {
+          name: "Governing Body Member",
+          link: "/about/governing-body-member",
+        },
+        {
+          name: "Director Message",
+          link: "/about/director-message",
+        },
+        {
+          name: "College Development Committee",
+          link: "/about/college-development-committee",
+        },
+        {
+          name: "Faculty Profile",
+          link: "/about/faculty-profile",
+        },
+        {
+          name: "Loni Campus",
+          link: "/about/loni-campus",
+        },
+        {
+          name: "Perspective Plan",
+          link: "/about/perspective-plan",
+        },
+        {
+          name: "Organisation Chart",
+          link: "/about/organisation-chart",
+        },
       ],
     },
 
     {
       name: "Department",
       dropdown: [
-        "MBA",
-        "MCA",
-        "Faculty",
+        {
+          name: "MBA",
+          link: "/department/mba",
+        },
+        {
+          name: "MCA",
+          link: "/department/mca",
+        },
+        {
+          name: "B.Voc.",
+          link: "/department/bvoc",
+        },
+        {
+          name: "Research Center",
+          link: "/department/research-center",
+        },
+        {
+          name: "Library",
+          link: "/department/library",
+        },
+        {
+          name: "Alumni Cell",
+          link: "/department/alumni-cell",
+        },
       ],
     },
 
     {
       name: "Student Corner",
       dropdown: [
-        "Student Activities",
-        "Notice Board",
-        "Events",
+        {
+          name: "Admission Enquiry",
+          link: "/student-corner/admission-enquiry",
+        },
+        {
+          name: "Admission Procedure",
+          link: "/student-corner/admission-procedure",
+        },
+        {
+          name: "Online Application Forms",
+          link: "/student-corner/online-application-forms",
+        },
+        {
+          name: "Entrance Exams",
+          link: "/student-corner/entrance-exams",
+        },
+        {
+          name: "Fees Structure",
+          link: "/student-corner/fees-structure",
+        },
+        {
+          name: "Hostel Accommodation",
+          link: "/student-corner/hostel-accommodation",
+        },
+        {
+          name: "Students Development",
+          link: "/student-corner/students-development",
+        },
+        {
+          name: "National Service Scheme",
+          link: "/student-corner/national-service-scheme",
+        },
+        {
+          name: "Apply for Scholarship",
+          link: "/student-corner/apply-for-scholarship",
+        },
+        {
+          name: "Life @ PIRENS IBMA",
+          link: "/student-corner/life-at-pirens-ibma",
+        },
+        {
+          name: "Vidyalakshmi Portal",
+          link: "/student-corner/vidyalakshmi-portal",
+        },
+        {
+          name: "CO-PO",
+          link: "/student-corner/co-po",
+        },
       ],
     },
 
     {
       name: "Academics",
       dropdown: [
-        "Programs",
-        "Syllabus",
-        "Academic Calendar",
+        {
+          name: "Administration",
+          link: "/academics/administration",
+        },
+        {
+          name: "Academic Committee",
+          link: "/academics/academic-committee",
+        },
+        {
+          name: "Academic Holiday",
+          link: "/academics/academic-holiday",
+        },
+        {
+          name: "Academic Calendar",
+          link: "/academics/academic-calendar",
+        },
+        {
+          name: "Examination",
+          link: "/academics/examination",
+        },
+        {
+          name: "Results",
+          link: "/academics/results",
+        },
+        {
+          name: "E-Learning",
+          link: "/academics/e-learning",
+        },
+        {
+          name: "CCE",
+          link: "/academics/cce",
+        },
       ],
     },
 
     {
       name: "NAAC",
       dropdown: [
-        "NAAC Documents",
-        "IQAC",
-        "Accreditation",
+        {
+          name: "NAAC Documents",
+          link: "/naac/documents",
+        },
+        {
+          name: "IQAC",
+          link: "/naac/iqac",
+        },
+        {
+          name: "Accreditation",
+          link: "/naac/accreditation",
+        },
       ],
     },
 
     {
       name: "Placement",
       dropdown: [
-        "Placement Cell",
-        "Recruiters",
-        "Placement Records",
+        {
+          name: "About Training & Placement",
+          link: "/placement/about-training-placement",
+        },
+        {
+          name: "Student Placed",
+          link: "/placement/student-placed",
+        },
+        {
+          name: "MOU & Collaborations",
+          link: "/placement/mou-collaborations",
+        },
+        {
+          name: "Placement Calender",
+          link: "/placement/placement-calender",
+        },
+        {
+          name: "Placement Policy",
+          link: "/placement/placement-policy",
+        },
+        {
+          name: "TPO Message",
+          link: "/placement/tpo-message",
+        },
+        {
+          name: "Training and Placement Cell Report",
+          link: "/placement/training-placement-cell-report",
+        },
       ],
     },
 
@@ -87,10 +253,10 @@ const Header = () => {
   };
 
   return (
-    <header className="w-full bg-white border-t-[3px] border-[#0b2d4d]">
+    <header className="w-full bg-white">
 
       {/* =====================================================
-          DESKTOP HEADER
+          DESKTOP
       ====================================================== */}
 
       <div className="hidden lg:block">
@@ -99,14 +265,12 @@ const Header = () => {
 
           <div className="h-[108px] flex items-center">
 
-            {/* ================= LOGO ================= */}
+            {/* LOGO */}
 
             <div className="flex-shrink-0 w-[250px] xl:w-[275px]">
 
-              <a
-                href="/"
-                className="inline-block"
-              >
+              <Link to="/" className="inline-block">
+
                 <img
                   src="/logo.png"
                   alt="PIRENS IBMA"
@@ -118,12 +282,13 @@ const Header = () => {
                     object-contain
                   "
                 />
-              </a>
+
+              </Link>
 
             </div>
 
 
-            {/* ================= NAVIGATION ================= */}
+            {/* NAVIGATION */}
 
             <nav
               className="
@@ -142,19 +307,12 @@ const Header = () => {
 
                 <div
                   key={item.name}
-                  className="
-                    relative
-                    group
-                    flex-shrink-0
-                  "
+                  className="relative group flex-shrink-0"
                 >
-
-                  {/* ================= DROPDOWN MENU ================= */}
 
                   {item.dropdown ? (
 
                     <>
-
                       <button
                         type="button"
                         onClick={() =>
@@ -169,7 +327,6 @@ const Header = () => {
                           xl:text-[16px]
                           2xl:text-[17px]
                           font-semibold
-                          tracking-[-0.1px]
                           transition-colors
                           duration-200
                           ${
@@ -196,7 +353,7 @@ const Header = () => {
                       </button>
 
 
-                      {/* ================= DROPDOWN ================= */}
+                      {/* DROPDOWN */}
 
                       <div
                         className="
@@ -205,16 +362,14 @@ const Header = () => {
                           left-1/2
                           -translate-x-1/2
 
-                          w-[210px]
+                          w-[250px]
 
                           bg-white
 
                           border
                           border-gray-100
 
-                          rounded-md
-
-                          shadow-lg
+                          shadow-xl
 
                           overflow-hidden
 
@@ -237,29 +392,34 @@ const Header = () => {
                         {item.dropdown.map(
                           (dropdownItem) => (
 
-                            <a
-                              key={dropdownItem}
-                              href="#"
-                              className="
+                            <Link
+                              key={dropdownItem.name}
+                              to={dropdownItem.link}
+                              className={`
                                 block
                                 px-5
                                 py-3
 
-                                text-[14px]
+                                text-[15px]
+                                leading-[1.15]
 
                                 font-medium
 
-                                text-[#132c47]
+                                ${
+                                  dropdownItem.name ===
+                                  "Board Of Trustee"
+                                    ? "text-[#079447]"
+                                    : "text-[#0b2d4d]"
+                                }
 
                                 hover:bg-[#f3f8f5]
-
                                 hover:text-[#079447]
 
                                 transition-colors
-                              "
+                              `}
                             >
-                              {dropdownItem}
-                            </a>
+                              {dropdownItem.name}
+                            </Link>
 
                           )
                         )}
@@ -270,10 +430,8 @@ const Header = () => {
 
                   ) : (
 
-                    /* ================= NORMAL LINK ================= */
-
-                    <a
-                      href={item.link}
+                    <Link
+                      to={item.link}
                       className="
                         block
                         whitespace-nowrap
@@ -289,11 +447,10 @@ const Header = () => {
                         hover:text-[#057a39]
 
                         transition-colors
-                        duration-200
                       "
                     >
                       {item.name}
-                    </a>
+                    </Link>
 
                   )}
 
@@ -307,21 +464,14 @@ const Header = () => {
 
         </div>
 
-
-        {/* ================= ACTIVE LINE ================= */}
-
-
-
       </div>
 
 
       {/* =====================================================
-          MOBILE HEADER
+          MOBILE
       ====================================================== */}
 
       <div className="lg:hidden">
-
-        {/* ================= MOBILE TOP ================= */}
 
         <div
           className="
@@ -336,10 +486,7 @@ const Header = () => {
 
           {/* LOGO */}
 
-          <a
-            href="/"
-            className="block"
-          >
+          <Link to="/" className="block">
 
             <img
               src="/logo.png"
@@ -352,10 +499,10 @@ const Header = () => {
               "
             />
 
-          </a>
+          </Link>
 
 
-          {/* ================= MENU BUTTON ================= */}
+          {/* MENU BUTTON */}
 
           <button
             type="button"
@@ -379,8 +526,6 @@ const Header = () => {
               text-[#0b2d4d]
 
               hover:bg-gray-50
-
-              transition
             "
           >
 
@@ -395,7 +540,7 @@ const Header = () => {
         </div>
 
 
-        {/* ================= MOBILE NAVIGATION ================= */}
+        {/* MOBILE MENU */}
 
         {mobileMenu && (
 
@@ -403,11 +548,8 @@ const Header = () => {
             className="
               border-t
               border-gray-200
-
               bg-white
-
               shadow-lg
-
               z-50
             "
           >
@@ -421,12 +563,9 @@ const Header = () => {
                   className="
                     border-b
                     border-gray-100
-
                     last:border-none
                   "
                 >
-
-                  {/* ================= DROPDOWN ================= */}
 
                   {item.dropdown ? (
 
@@ -439,22 +578,14 @@ const Header = () => {
                         }
                         className="
                           w-full
-
                           flex
                           items-center
                           justify-between
-
                           py-4
-
                           text-[16px]
-
                           font-semibold
-
                           text-[#0b2d4d]
-
                           hover:text-[#079447]
-
-                          transition
                         "
                       >
 
@@ -465,10 +596,8 @@ const Header = () => {
                           className={`
                             transition-transform
                             duration-200
-
                             ${
-                              openDropdown ===
-                              item.name
+                              openDropdown === item.name
                                 ? "rotate-180"
                                 : ""
                             }
@@ -478,40 +607,29 @@ const Header = () => {
                       </button>
 
 
-                      {/* MOBILE SUB MENU */}
+                      {openDropdown === item.name && (
 
-                      {openDropdown ===
-                        item.name && (
-
-                        <div
-                          className="
-                            pb-3
-                            pl-4
-                          "
-                        >
+                        <div className="pb-3 pl-4">
 
                           {item.dropdown.map(
                             (dropdownItem) => (
 
-                              <a
-                                key={dropdownItem}
-                                href="#"
+                              <Link
+                                key={dropdownItem.name}
+                                to={dropdownItem.link}
+                                onClick={() =>
+                                  setMobileMenu(false)
+                                }
                                 className="
                                   block
-
                                   py-2
-
                                   text-[14px]
-
-                                  text-gray-600
-
+                                  text-[#0b2d4d]
                                   hover:text-[#079447]
-
-                                  transition
                                 "
                               >
-                                {dropdownItem}
-                              </a>
+                                {dropdownItem.name}
+                              </Link>
 
                             )
                           )}
@@ -524,28 +642,21 @@ const Header = () => {
 
                   ) : (
 
-                    /* ================= NORMAL MOBILE LINK ================= */
-
-                    <a
-                      href={item.link}
+                    <Link
+                      to={item.link}
+                      onClick={() =>
+                        setMobileMenu(false)
+                      }
                       className="
                         block
-
                         py-4
-
                         text-[16px]
-
                         font-semibold
-
                         text-[#079447]
-
-                        hover:text-[#057a39]
-
-                        transition
                       "
                     >
                       {item.name}
-                    </a>
+                    </Link>
 
                   )}
 
