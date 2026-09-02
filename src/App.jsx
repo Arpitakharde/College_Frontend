@@ -1,7 +1,8 @@
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 
 import Header from "./components/Header";
-import Contact from "./pages/Contact";
+import Contact from "./pages/contact";
+import MissionVision from "./pages/about/MissionVision";
 
 function Home() {
   return (
@@ -16,22 +17,18 @@ function Home() {
 function App() {
   return (
     <BrowserRouter>
-
       <Header />
 
       <Routes>
-
-        {/* HOME */}
         <Route path="/" element={<Home />} />
 
-        {/* CONTACT */}
+        <Route path="/contact" element={<Contact />} />
+
         <Route
-          path="/contact"
-          element={<Contact />}
+          path="/about/mission-vision"
+          element={<MissionVision />}
         />
-
       </Routes>
-
     </BrowserRouter>
   );
 }
