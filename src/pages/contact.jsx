@@ -12,7 +12,7 @@ const Contact = () => {
           Welcome to PIRENS IBMA Contact Page.
         </p>
 
-      </div>
+      </div>rfvnksnd
 
     </main>
   );
