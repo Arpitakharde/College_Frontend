@@ -1,6 +1,7 @@
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 
 import Header from "./components/Header";
+import Footer from "./components/Footer";
 import Contact from "./pages/contact";
 import MissionVision from "./pages/about/MissionVision";
 
@@ -29,6 +30,8 @@ function App() {
           element={<MissionVision />}
         />
       </Routes>
+
+      <Footer />
     </BrowserRouter>
   );
 }
