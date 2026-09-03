@@ -38,6 +38,12 @@ function App() {
           element={<ELearning />}
         />
 
+        {/*academics Results*/ }
+        <Route
+          path="/academics/results"
+          element={<Results/>}
+        />
+
 
 
       </Routes>
