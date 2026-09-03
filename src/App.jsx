@@ -2,6 +2,7 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 
 import Header from "./components/Header";
 import Contact from "./pages/Contact";
+import ELearning from "./pages/academics/e-learning";
 
 function Home() {
   return (
@@ -29,6 +30,14 @@ function App() {
           path="/contact"
           element={<Contact />}
         />
+
+        {/*academics e-learning*/ }
+        <Route
+          path="/academics/e-learning"
+          element={<ELearning />}
+        />
+
+
 
       </Routes>
 
