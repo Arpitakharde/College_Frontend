@@ -4,7 +4,7 @@ import Header from "./components/Header";
 import Contact from "./pages/Contact";
 import ELearning from "./pages/academics/e-learning";
 import Results from "./pages/academics/results";
-import Examination from "./pages/academics/results";
+import Examination from "./pages/academics/examination";
 
 function Home() {
   return (
@@ -43,6 +43,12 @@ function App() {
         <Route
           path="/academics/results"
           element={<Results/>}
+        />
+
+        {/*academics Examination*/ }
+        <Route
+          path="/academics/examination"
+          element={<Examination/>}
         />
 
 
