@@ -3,6 +3,7 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Header from "./components/Header";
 import Contact from "./pages/Contact";
 import ELearning from "./pages/academics/e-learning";
+import ELearning from "./pages/academics/results";
 
 function Home() {
   return (
