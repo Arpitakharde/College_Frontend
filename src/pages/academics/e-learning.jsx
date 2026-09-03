@@ -1,11 +1,11 @@
-const Contact = () => {
+const Elearning = () => {
   return (
     <main className="min-h-screen bg-gray-50 py-16 px-6">
 
       <div className="max-w-6xl mx-auto">
 
         <h1 className="text-4xl font-bold text-[#0b2d4d]">
-          Contact Us
+           e-learning
         </h1>
 
         <p className="mt-4 text-gray-600">
@@ -18,4 +18,4 @@ const Contact = () => {
   );
 };
 
-export default Contact;
+export default Elearning;
