@@ -5,6 +5,8 @@ import Contact from "./pages/Contact";
 import ELearning from "./pages/academics/e-learning";
 import Results from "./pages/academics/results";
 import Examination from "./pages/academics/examination";
+import AcademicCalendar from "./pages/academics/academic-calendar";
+
 
 function Home() {
   return (
@@ -50,7 +52,8 @@ function App() {
           path="/academics/examination"
           element={<Examination/>}
         />
-
+        
+        
 
 
       </Routes>
