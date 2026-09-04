@@ -53,7 +53,12 @@ function App() {
           element={<Examination/>}
         />
         
-        
+        {/*academics AcademicsCalendar*/ }
+        <Route
+          path="/academics/academic-calendar"
+          element={<AcademicCalendar/>}
+        />
+
 
 
       </Routes>
