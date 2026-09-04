@@ -60,6 +60,11 @@ function App() {
           element={<AcademicCalendar/>}
         />
 
+        {/*academics AcademicsHoliday*/ }
+        <Route
+          path="/academics/academic-holiday"
+          element={<AcademicHoliday/>}
+        />
 
 
       </Routes>
