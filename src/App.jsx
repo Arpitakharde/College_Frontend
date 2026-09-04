@@ -67,6 +67,12 @@ function App() {
           element={<AcademicHoliday/>}
         />
 
+        {/*academics AcademicsCommittee*/ }
+        <Route
+          path="/academics/academic-committee"
+          element={<AcademicCommittee/>}
+        />
+
 
       </Routes>
 
