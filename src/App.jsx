@@ -81,6 +81,12 @@ function App() {
           element={<Administration/>}
         />
 
+        {/*academics Cce*/ }
+        <Route
+          path="/academics/cce"
+          element={<Cce/>}
+        />
+
 
       </Routes>
 
