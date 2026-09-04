@@ -7,6 +7,7 @@ import Results from "./pages/academics/results";
 import Examination from "./pages/academics/examination";
 import AcademicCalendar from "./pages/academics/academic-calendar";
 import AcademicHoliday from "./pages/academics/academic-holiday";
+import AcademicCommittee from "./pages/academics/academic-committee";
 
 
 function Home() {
