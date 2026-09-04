@@ -6,6 +6,7 @@ import ELearning from "./pages/academics/e-learning";
 import Results from "./pages/academics/results";
 import Examination from "./pages/academics/examination";
 import AcademicCalendar from "./pages/academics/academic-calendar";
+import AcademicHoliday from "./pages/academics/academic-holiday";
 
 
 function Home() {
