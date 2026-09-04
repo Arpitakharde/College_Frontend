@@ -74,6 +74,12 @@ function App() {
           element={<AcademicCommittee/>}
         />
 
+        {/*academics Administration*/ }
+        <Route
+          path="/academics/administration"
+          element={<Administration/>}
+        />
+
 
       </Routes>
 
