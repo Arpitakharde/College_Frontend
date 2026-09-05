@@ -1,7 +1,10 @@
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 
 import Header from "./components/Header";
+import Footer from "./components/Footer";
 import Contact from "./pages/Contact";
+import MissionVision from "./pages/about/MissionVision";
+
 import ELearning from "./pages/academics/e-learning";
 import Results from "./pages/academics/results";
 import Examination from "./pages/academics/examination";
@@ -10,7 +13,6 @@ import AcademicHoliday from "./pages/academics/academic-holiday";
 import AcademicCommittee from "./pages/academics/academic-committee";
 import Administration from "./pages/academics/administration";
 import Cce from "./pages/academics/cce";
-
 
 function Home() {
   return (
@@ -25,20 +27,18 @@ function Home() {
 function App() {
   return (
     <BrowserRouter>
-
       <Header />
 
       <Routes>
-
-        {/* HOME */}
         <Route path="/" element={<Home />} />
 
-        {/* CONTACT */}
-        <Route
-          path="/contact"
-          element={<Contact />}
-        />
+        <Route path="/contact" element={<Contact />} />
 
+        <Route
+          path="/about/mission-vision"
+          element={<MissionVision />}
+        />
+            
         {/*academics e-learning*/ }
         <Route
           path="/academics/e-learning"
@@ -88,8 +88,10 @@ function App() {
         />
 
 
+
       </Routes>
 
+      <Footer />
     </BrowserRouter>
   );
 }
