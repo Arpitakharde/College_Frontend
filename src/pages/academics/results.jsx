@@ -42,7 +42,7 @@ const Results = () => {
             </h2>
             
             <a
-              href=""
+              href="https://www.unipune.ac.in/university_files/results.htm"
               target="_blank"
               rel="noopener noreferrer"
               className="inline-block mt-16 bg-[#092f52] text-white px-12 py-7 text-2xl"
