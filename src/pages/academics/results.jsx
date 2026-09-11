@@ -34,6 +34,17 @@ const Results = () => {
           </div>
 
 
+          {/* MCA */}
+          <div className="text-center">
+
+            <h2 className="text-3xl font-bold text-[#0b2d4d]">
+              Annual Result of MCA
+            </h2>
+
+            
+          </div>
+
+
 
         </div>
 
