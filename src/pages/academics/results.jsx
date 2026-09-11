@@ -40,8 +40,17 @@ const Results = () => {
             <h2 className="text-3xl font-bold text-[#0b2d4d]">
               Annual Result of MCA
             </h2>
-
             
+            <a
+              href=""
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-block mt-16 bg-[#092f52] text-white px-12 py-7 text-2xl"
+            >
+              Click here for MCA Result
+            </a>
+
+
           </div>
 
 
