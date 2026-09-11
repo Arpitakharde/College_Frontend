@@ -9,7 +9,19 @@ const Results = () => {
         </h1>
       </div>
 
-     
+      {/* Results */}
+      <div className="max-w-6xl mx-auto py-24 px-6">
+
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-20">
+
+         
+
+         
+
+        </div>
+
+      </div>
+
       
 
     </main>
