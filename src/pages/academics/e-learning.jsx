@@ -96,19 +96,22 @@ const Elearning = () => {
 
   
   return (
-    <main className="min-h-screen bg-gray-50 py-16 px-6">
+    <main className="min-h-screen bg-white">
 
-      <div className="max-w-6xl mx-auto">
+      {/* Banner */}
+      <div
+        className="relative h-28 bg-[#14558a] bg-cover bg-center"
+        style={{ backgroundImage: `url(${banner})` }}
+      >
+        <div className="absolute inset-0 bg-[#14558a]/50"></div>
 
-        <h1 className="text-4xl font-bold text-[#0b2d4d]">
-           e-learning
+        <h1 className="relative z-10 flex h-full items-center justify-center text-4xl font-bold text-white">
+          E-Learning Resource
         </h1>
-
-        <p className="mt-4 text-gray-600">
-          Welcome to PIRENS IBMA E-learning Page.
-        </p>
-
       </div>
+
+
+      
 
     </main>
   );
