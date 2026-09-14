@@ -110,9 +110,21 @@ const Elearning = () => {
         </h1>
       </div>
 
+      {/* Table */}
+      <div className="max-w-6xl mx-auto px-6 py-20">
 
+        <div className="overflow-x-auto">
+
+          <table className="w-full border-collapse">
+
+
+
+          </table>
+
+        </div>
       
-
+      </div>
+      
     </main>
   );
 };
