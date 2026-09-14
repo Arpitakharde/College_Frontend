@@ -117,7 +117,26 @@ const Elearning = () => {
 
           <table className="w-full border-collapse">
 
+            {/* Table Header */}
+            <thead>
+              <tr className="bg-[#0b9250] text-white">
 
+                <th className="w-[15%] border-2 border-white px-4 py-5 text-lg">
+                  Sr. No.
+                </th>
+
+                <th className="w-[55%] border-2 border-white px-4 py-5 text-lg">
+                  E – Learning Resource
+                </th>
+
+                <th className="w-[30%] border-2 border-white px-4 py-5 text-lg">
+                  Website
+                </th>
+
+              </tr>
+            </thead>
+
+            
 
           </table>
 
