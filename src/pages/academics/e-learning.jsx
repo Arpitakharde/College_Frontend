@@ -136,7 +136,52 @@ const Elearning = () => {
               </tr>
             </thead>
 
-            
+            {/* Table Rows */}
+            <tbody>
+
+              {resources.map((resource) => (
+
+                <tr
+                  key={resource.id}
+                  className="bg-[#f1f1f1]"
+                >
+
+                  {/* Sr. No. */}
+                  <td className="border-2 border-white px-4 py-8 text-center text-lg">
+                    {resource.id}
+                  </td>
+
+
+                  {/* Resource Name */}
+                  <td className="border-2 border-white px-8 py-8 text-lg text-gray-800">
+                    {resource.name}
+                  </td>
+
+
+                  {/* Website Logo */}
+                  <td className="border-2 border-white px-4 py-6 text-center">
+
+                    <a
+                      href={resource.link}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                    >
+
+                      <img
+                        src={resource.image}
+                        alt={resource.name}
+                        className="mx-auto h-28 w-56 object-contain"
+                      />
+
+                    </a>
+
+                  </td>
+
+                </tr>
+
+              ))}
+
+            </tbody>
 
           </table>
 
